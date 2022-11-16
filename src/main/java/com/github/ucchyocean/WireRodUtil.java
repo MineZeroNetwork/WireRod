@@ -2,6 +2,8 @@ package com.github.ucchyocean;
 
 import java.util.Iterator;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -58,7 +60,7 @@ final class WireRodUtil {
 
         ItemStack rod = new ItemStack(Material.FISHING_ROD);
         ItemMeta meta = rod.getItemMeta();
-        meta.setDisplayName(DISPLAY_NAME);
+        meta.displayName(Component.text(DISPLAY_NAME));
         rod.setItemMeta(meta);
         rod.addUnsafeEnchantment(Enchantment.OXYGEN, Math.max(1, Math.min(MAX_LEVEL, level)));
 
@@ -76,7 +78,7 @@ final class WireRodUtil {
                 && rod.getType() == Material.FISHING_ROD
                 && rod.hasItemMeta()
                 && rod.getItemMeta().hasDisplayName()
-                && rod.getItemMeta().getDisplayName().equals(DISPLAY_NAME);
+                && PlainTextComponentSerializer.plainText().serialize(rod.getItemMeta().displayName()).equals(DISPLAY_NAME);
     }
 
     /**
