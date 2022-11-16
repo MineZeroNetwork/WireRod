@@ -18,7 +18,7 @@ final class Compatibles {
 
     static ShapedRecipe createWireRodRecipe(int defualtLevel) {
         ShapedRecipe recipe;
-        ItemStack rod = WireRodUtil.getWireRod(defualtLevel);
+        ItemStack rod = WireRodUtil.getWireRod(defualtLevel, false);
         try {
             NamespacedKey key = new NamespacedKey(WireRod.getPlugin(WireRod.class), WireRodUtil.DISPLAY_NAME);
             recipe = new ShapedRecipe(key, rod);

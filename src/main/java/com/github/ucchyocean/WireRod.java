@@ -128,7 +128,16 @@ public class WireRod extends JavaPlugin {
                 level = Integer.parseInt(args[1]);
             }
 
-            WireRodUtil.giveWireRod(player, level);
+            boolean isUnbreakable = false;
+            if (args.length >= 3) {
+                try {
+                    isUnbreakable = Boolean.parseBoolean(args[2]);
+                }catch (Exception e) {
+                    sender.sendMessage(ChatColor.RED + "The third argument must be boolean. An invalid value is false.");
+                }
+            }
+
+            WireRodUtil.giveWireRod(player, level, isUnbreakable);
 
             return true;
         }
@@ -151,7 +160,16 @@ public class WireRod extends JavaPlugin {
                 level = Integer.parseInt(args[2]);
             }
 
-            WireRodUtil.giveWireRod(player, level);
+            boolean isUnbreakable = false;
+            if (args.length >= 4) {
+                try {
+                    isUnbreakable = Boolean.parseBoolean(args[2]);
+                }catch (Exception e) {
+                    sender.sendMessage(ChatColor.RED + "The third argument must be boolean. An invalid value is false.");
+                }
+            }
+
+            WireRodUtil.giveWireRod(player, level, isUnbreakable);
 
             return true;
         }

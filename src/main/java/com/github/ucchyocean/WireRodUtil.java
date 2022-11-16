@@ -56,11 +56,16 @@ final class WireRodUtil {
      *
      * @param level レベル
      */
-    static ItemStack getWireRod(int level) {
+    static ItemStack getWireRod(int level, boolean isUnbreakable) {
 
         ItemStack rod = new ItemStack(Material.FISHING_ROD);
         ItemMeta meta = rod.getItemMeta();
         meta.displayName(Component.text(DISPLAY_NAME));
+
+        if (isUnbreakable) {
+            meta.setUnbreakable(true);
+        }
+
         rod.setItemMeta(meta);
         rod.addUnsafeEnchantment(Enchantment.OXYGEN, Math.max(1, Math.min(MAX_LEVEL, level)));
 
@@ -87,8 +92,8 @@ final class WireRodUtil {
      * @param player プレイヤー
      * @param level  レベル
      */
-    static void giveWireRod(Player player, int level) {
-        ItemStack rod = WireRodUtil.getWireRod(level);
+    static void giveWireRod(Player player, int level, boolean isUnbreakable) {
+        ItemStack rod = WireRodUtil.getWireRod(level, isUnbreakable);
 
         ItemStack temp = Compatibles.getItemInMainHand(player);
         Compatibles.setItemInMainHand(player, rod);
