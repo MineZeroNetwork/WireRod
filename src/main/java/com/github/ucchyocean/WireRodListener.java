@@ -70,11 +70,6 @@ public class WireRodListener implements Listener {
             return;
         }
 
-        // 水中呼吸エンチャントがついていないなら何もしない
-        if (!rod.containsEnchantment(Enchantment.OXYGEN)) {
-            return;
-        }
-
         // 針を投げるときの処理
         if (Compatibles.isThrowHookState(event)) {
 

@@ -82,8 +82,8 @@ final class WireRodUtil {
         return rod != null
                 && rod.getType() == Material.FISHING_ROD
                 && rod.hasItemMeta()
-                && rod.getItemMeta().hasDisplayName()
-                && rod.getItemMeta().getEnchants().containsKey(Enchantment.OXYGEN);
+                && rod.getItemMeta().hasEnchants()
+                && rod.getItemMeta().hasEnchant(Enchantment.OXYGEN);
     }
 
     /**
