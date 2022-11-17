@@ -83,7 +83,7 @@ final class WireRodUtil {
                 && rod.getType() == Material.FISHING_ROD
                 && rod.hasItemMeta()
                 && rod.getItemMeta().hasDisplayName()
-                && PlainTextComponentSerializer.plainText().serialize(rod.getItemMeta().displayName()).equals(DISPLAY_NAME);
+                && rod.getItemMeta().getEnchants().containsKey(Enchantment.OXYGEN);
     }
 
     /**
