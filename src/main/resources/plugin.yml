@@ -8,8 +8,8 @@ commands:
     description: ${project.description}
     aliases: [wi,wr]
     usage: |
-           /<command> get [level] - Get new WireRod.
-           /<command> give (player) [level] - Give new WireRod.
+           /<command> get [level] [isUnbreakable] - Get new WireRod.
+           /<command> give (player) [level] [isUnbreakable] - Give new WireRod.
            /<command> reload - Reload config.yml.
     permission: wirerod.command
     permission-message: You don't have permission "<permission>".
